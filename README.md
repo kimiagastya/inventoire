@@ -23,5 +23,5 @@ Virtual environment digunakan untuk mengisolasi dependencies dari project yang k
   - MVVM
     - Model: mengelola database;
     - View: menentukan tata letak elemen-elemen yang akan dilihat oleh user;
-    - ViewModel: melakukan interaksi dengan model dan meneruskan data ke bagian view
+    - ViewModel: melakukan interaksi dengan model dan meneruskan data ke bagian view. <br>
     MVC menggunakan controller sebagai pengatur logika aplikasi. MVT menggunakan Template untuk mengatur logika serta mengembalikan tampilan aplikasi. MVVM   menggunakan ViewModel untuk mengatur logika aplikasi.
