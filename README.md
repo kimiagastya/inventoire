@@ -1,3 +1,39 @@
+<h3>Tugas 3</h3>
+
+1. Apa perbedaan antara form POST dan form GET dalam Django? <br>
+POST dan GET adalah metode HTTP yang hanya bisa digunakan ketika bekerja dengan forms. Perbedaan antara keduanya adalah sebagai berkut <br>
+  * POST digunakan untuk memproses request yang berkaitan dengan perubahan kondisi sistem, contohnya seperti menambahkan atau menghapus data di database. Metode ini juga digunakan untuk form login. Dalam prosesnya, browser akan menggabungkan data form, kemudian data tersebut di-encode, dikirimkan ke server, dan akhirnya menerima response yang diberikan. POST juga men-handle request yang berkaitan dengan password karena data akan di-encode terlebih dahulu sehingga membuat prosesnya menjadi aman.
+  * GET digunakan untuk menerima data tanpa membuat perubahan dalam database, seperti web search. Dalam prosesnya, GET akan menggabungkan data menjadi sebuat string yang selanjutnya akan digunakan untuk membuat URL yang berisi address tujuan data serta key dan value nya. GET tidak cocok digunakan untuk men-handle data yang sensitif seperti password karena password akan muncul di URL yang dibuat.
+1. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data? <br>
+  * XML digunaknan untuk pertukaran data. XML merepresentasikan data dengan menggunakan struktur tag, yang mirip dengan tag HTML. Data yang terdapat di file XML bersifat human-readable dan juga machine-readable.
+  * HTML digunakan untuk menampilkan data. HTML tidak cocok untuk pertukaran data antar platform yang berbeda karena HTML menggunakan sintaks dan atribut yang tidak relevan dalam memproses data <br>
+1. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern? <br>
+  1. JSON menyimpan data dalam sebuah array sehingga membuat proses transfer data menjadi lebih sederhana.
+  1. Sintaks JSON mudah digunakan dan sangat ringan untuk diproses sehingga lebih cepat dalam merespon dan mengeksekusi request client.
+  1. Semua browser dan sistem operasi kompatibel dengan JSON. Semua browser dan bahasa pemrograman memiliki parser JSON.
+1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). <br>
+Pertama-tama dimulai dengan membuat file forms.py di dalam direktori main dan menambahkan kode yang terdapat pada tutorial, tetapi isi dari variabel fields diganti dengan '["name", "price", "description"]'. Kemudian file views.py ditambahkan dengan beberapa line import sesuai dengan yang ada pada tutorial. Di file yang sama, saya juga membuat fungsi baru yang bernama 'create_product' dengan parameter 'request' untuk menghasilkan form dan menambahkan data form otomatis setelah datanya di-submit. Selanjutnya, fungsi 'show.main' pada file yang sama ditambahkan variabel 'product' yang di-assign dengan value 'Product.objects.all()' serta menambahkan key ''product'' dengan value product pada variabel dictionary 'context'. Selanjutnya pindah ke file urls.py yang ada pada direktori main untuk menambahkan import fungsi 'create_product' yang telah dibuat sebelumnya dan menambahkan path url ke dalam variabel 'urlpatterns'. Berikutnya dibuat file HTML bernama create_product.html pada direktori main/templates dan diisi dengan kode sesuai dengan tutorial 2. Kemudian untuk menampilkan data dalam tabel, file main.html ditambahkan kode yang mirip dengan tutorial 2 yang dimodifikasi sesuai dengan atribut produk pada tugas 2, yaitu Name, Amount, dan Description. Teks pada button juga diubah menjadi "Add New Car" sesuai dengan tema tugas 2 saya, yaitu Supercar Dealership. <br>
+
+Agar data yang di-submit dapat dikembalikan dalam bentuk XML, JSON, dan berdasarkan ID nya, pertama-tama file views.py di direktori main ditambahkan import 'HttpResponse' dan 'Serializers'. Selanjutnya dibuat variabel 'data' dengan value 'Product.objects.filter(pk=id)'. Kemudian ditambahkan 4 fungsi dengan parameternya masing-masing, yaitu 'show_xml(request)', 'show_json(request)', 'show_xml_by_id(request, id)', dan 'show_json_by_id(request, id)'. Fungsi-fungsi tersebut diisi dengan kode sesuai dengan turtorial 2. Berikutnya pada file 'urls.py' yang terdapat pada direktori main ditambahkan impor 4 fungsi yang telah dibuat sebelumnya, serta ditambahkan path url-nya masing-masing. 
+
+1. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md. <br>
+  1. HTML
+  ![Screenshot Postman HTML1](assets_tugas/POSTMAN_HTML1.png) <br>
+  ![Screenshot Postman HTML2](assets_tugas/POSTMAN_HTML2.png) <br>
+  ![Screenshot Postman HTML3](assets_tugas/POSTMAN_HTML3.png) <br>
+
+  1. JSON
+  ![Screenshot Postman JSON](assets_tugas/POSTMAN_JSON.png) <br>
+  ![Screenshot Postman JSON1](assets_tugas/POSTMAN_JSON1.png) <br>
+  ![Screenshot Postman JSON4](assets_tugas/POSTMAN_JSON4.png) <br>
+
+  1. XML
+  ![Screenshot Postman XML](assets_tugas/POSTMAN_XML.png) <br>
+  ![Screenshot Postman XML1](assets_tugas/POSTMAN_XML1.png) <br>
+  ![Screenshot Postman XML4](assets_tugas/POSTMAN_XML4.png) <br>
+
+<h3>Tugas 2</h3>
+
 **Link Adaptable:** https://inventoire.adaptable.app <br>
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). <br>

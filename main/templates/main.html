@@ -1,5 +1,36 @@
-<h1>Supercars Dealership</h1>
-<h5>Nama: </h5>
-<p>{{nama_identitas}}</p>
-<h5>Kelas: </h5>
-<p>{{kelas_identitas}}</p>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Supercars Dealership</h1>
+    <h5>Nama: </h5>
+    <p>{{nama_identitas}}</p>
+    <h5>Kelas: </h5>
+    <p>{{kelas_identitas}}</p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Description</th>
+        </tr>
+
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+
+        {% for p in product %}
+            <tr>
+                <td>{{p.name}}</td>
+                <td>{{p.amount}}</td>
+                <td>{{p.description}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br />
+
+    <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Car
+        </button>
+    </a>
+
+{% endblock content %}
