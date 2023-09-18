@@ -6,6 +6,7 @@ POST dan GET adalah metode HTTP yang hanya bisa digunakan ketika bekerja dengan 
   * GET digunakan untuk menerima data tanpa membuat perubahan dalam database, seperti web search. Dalam prosesnya, GET akan menggabungkan data menjadi sebuat string yang selanjutnya akan digunakan untuk membuat URL yang berisi address tujuan data serta key dan value nya. GET tidak cocok digunakan untuk men-handle data yang sensitif seperti password karena password akan muncul di URL yang dibuat.
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data? <br>
   * XML digunaknan untuk pertukaran data. XML merepresentasikan data dengan menggunakan struktur tag, yang mirip dengan tag HTML. Data yang terdapat di file XML bersifat human-readable dan juga machine-readable.
+  * JSON merepresentasikan data sebagai objek dan datanya disimpan dengan pasangan key value.
   * HTML digunakan untuk menampilkan data. HTML tidak cocok untuk pertukaran data antar platform yang berbeda karena HTML menggunakan sintaks dan atribut yang tidak relevan dalam memproses data <br>
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern? <br>
   * JSON menyimpan data dalam sebuah array sehingga membuat proses transfer data menjadi lebih sederhana.
