@@ -1,3 +1,23 @@
+<h3>Tugas 4</h3>
+ 
+ 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya? <br>
+    Django 'UserCreationForm' adalah form yang bertugas untuk mendaftarkan user baru ke dalam aplikasi kita.<br>
+    Kelebihan:
+    - UserCreationForm merupakan fitur bawaan Django yang siap digunakan sehingga dapat menghemat waktu dalam pembuatan aplikasi
+    - UserCreationForm dapat diimplementasikan pada app yang berbeda dari project sehingga memungkinkan untuk membuat sebuah app yang bertugas sepenuhnya untuk membuat user baru.
+    - UserCreationForm mendukung validasi input, seperti kesesuaian ketentuan username dan kesesuaian antara field "Password" dan "Password confirmation".
+
+    Kekurangan:
+    - Hanya terdapat field username dan password. Jika ingin menambahkan field baru (seperti e-mail), maka harus memodifikasi UserCreationForm dengan menambahkan field serta validasi inputnya, atau dengan membuat form registrasi dari awal tanpa menggunakan UserCreationForm.
+
+ 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting? <br>
+    Autentikasi merupakan proses untuk memverifikasi identitas user dengan mengecek username dan passwordnya dengan data yang tersimpan di dalam database. Jika verifikasi sukses, maka sistem akan mengonfirmasi keabsahan user. Otorisasi adalah proses menentukan apa saja yang bisa dan tidak bisa dilakukan oleh user dengan mengecek apakah suatu user punya izin untuk mengakses atau melakukan sesuatu. <br>
+    Keduanya penting untuk menjaga data sensitif agar tidak dapat dilihat dan disalahgunakan oleh sembarang user. Autentikasi dan otorisasi juga dapat memudahkan kita untuk memantau aktivitas user dengan mengetahui siapa user yang melakukan suatu hal di dalam sistem.
+ 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+    
+ 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+ 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 <h3>Tugas 3</h3>
 
 1. Apa perbedaan antara form POST dan form GET dalam Django? <br>
