@@ -39,14 +39,14 @@
       <br>
 
     * Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi: <br>
-    Pertama-tama saya menambahkan beberapa modul yang dibutuhkan pada file `views.py`, yaitu `HttpResponseRedirect`, `reverse`, dan `datetime`. Pada file yang sama, saya menambahkan cookies `last_login` pada fungsi `login_user` untuk menampilkan waktu saat user login. Variabel `context` pada fungsi `show_main` ditambah dengan `'last_login': request.COOKIES['last_login']` untuk menambahkan informasi `last_login`. Fungsi `logout_user` dimodifikasi agar cookies dihapus ketika user logout. Pada file `main.html` ditambahkan kode untuk menampilkan waktu user login.
-    <br>
-    <br>
-    Selanjutnya, saya memodifikasi file `models.py` dengan mengimport modul `User` dan menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` untuk menghubungkan product dengan user. Kemudian saya memodifikasi function `create_product` pada file `views.py` agar objek yang dibuat tidak langsung disimpan ke database. Fungsi `show_main` juga dimodifikasi supaya bagian "Name" menampilkan username user yang sedang login. Terakhir, karena saya telah melakukan modifikasi pada `models.py`, maka saya melakukan migration models dari command prompt.
-    <br>
-    <br>
+      Pertama-tama saya menambahkan beberapa modul yang dibutuhkan pada file `views.py`, yaitu `HttpResponseRedirect`, `reverse`, dan `datetime`. Pada file yang sama, saya menambahkan cookies `last_login` pada fungsi `login_user` untuk menampilkan waktu saat user login. Variabel `context` pada fungsi `show_main` ditambah dengan `'last_login': request.COOKIES['last_login']` untuk menambahkan informasi `last_login`. Fungsi `logout_user` dimodifikasi agar cookies dihapus ketika user logout. Pada file `main.html` ditambahkan kode untuk menampilkan waktu user login.
+      <br>
+      <br>
+      Selanjutnya, saya memodifikasi file `models.py` dengan mengimport modul `User` dan menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` untuk menghubungkan product dengan user. Kemudian saya memodifikasi function `create_product` pada file `views.py` agar objek yang dibuat tidak langsung disimpan ke database. Fungsi `show_main` juga dimodifikasi supaya bagian "Name" menampilkan username user yang sedang login. Terakhir, karena saya telah melakukan modifikasi pada `models.py`, maka saya melakukan migration models dari command prompt.
+      <br>
+      <br>
     * Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal. <br>
-    Saya melakukan registrasi untuk membuat dua akun baru sesuai dengan ketentuan pada `UserCreationForm` dan men-submit 3 data pada masing-masing akun. Fungsi yang sudah dibuat sebelumnya bekerja dan tabel hanya menampilkan data yang di-submit oleh user yang sedang login.<br>
+      Saya melakukan registrasi untuk membuat dua akun baru sesuai dengan ketentuan pada `UserCreationForm` dan men-submit 3 data pada masing-masing akun. Fungsi yang sudah dibuat sebelumnya bekerja dan tabel hanya menampilkan data yang di-submit oleh user yang sedang login.<br>
 
 <h3>Tugas 3</h3>
 
