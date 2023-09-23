@@ -1,7 +1,7 @@
 <h3>Tugas 4</h3>
  
  1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya? <br>
-    Django 'UserCreationForm' adalah form yang bertugas untuk mendaftarkan user baru ke dalam aplikasi kita.<br>
+    Django `UserCreationForm` adalah form yang bertugas untuk mendaftarkan user baru ke dalam aplikasi kita.<br>
     Kelebihan:
     - UserCreationForm merupakan fitur bawaan Django yang siap digunakan sehingga dapat menghemat waktu dalam pembuatan aplikasi
     - UserCreationForm dapat diimplementasikan pada app yang berbeda dari project sehingga memungkinkan untuk membuat sebuah app yang bertugas sepenuhnya untuk membuat user baru.
@@ -22,8 +22,31 @@
     - Jika terjadi penyerangan pada situs web, cookies bisa terekspos oleh penyerang
     - Potensi terjadinya Cross-Site Scripting, yang dapat terjadi ketika script berbahaya dimasukkan ke dalam situs web yang dapat digunakan untuk mencuri informasi sensitif seperti session token
     - Potensi terjadinya session fixation, yaitu serangan yang memungkinkan penyerang membajak sesi user.<br>
-    
+
  5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    * Mengimplementasikan fungsi registrasi, login, dan logout: <br>
+      Pertama-tama saya menambahkan beberapa modul yang dibutuhkan pada file `views.py`, seperti `UserCreationForm` untuk registrasi user baru, `authenticate` untuk mengautentikasi user terdaftar yang ingin login, serta modul `logout`.
+      <br>
+      <br>
+      Selanjutnya, pada file yang sama, saya membuat functionnya masing-masing. Function `register` dibuat untuk menghasilkan form registrasi secara otomatis dan membuat user baru. Function `login` berfungsi untuk mengautentikasi user yang ingin login. Function `logout` berfungsi untuk menghapus sesi user saat itu dan mengarahkan ke halaman login.
+      <br>
+      <br>
+      Kemudian, saya membuat file HTML baru untuk register dan login yang saya letakkan di direktori main/templates yang kemudian saya tambahkan path url nya pada file `urls.py`. Saya juga menambahkan tombol logout pada file `main.html` untuk melakukan proses logout.
+      <br>
+      <br>
+      Terakhir, saya membatasi akses halaman main supaya user harus login terlebih dahulu. Saya import modul `login_required` pada `views.py` dan menambahkan kode `@login_required(login_url='/login')` di atas function `show_main` supaya halaman main hanya bisa diakses oleh user yang telah login.
+      <br>
+      <br>
+
+    * Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi: <br>
+    Pertama-tama saya menambahkan beberapa modul yang dibutuhkan pada file `views.py`, yaitu `HttpResponseRedirect`, `reverse`, dan `datetime`. Pada file yang sama, saya menambahkan cookies `last_login` pada fungsi `login_user` untuk menampilkan waktu saat user login. Variabel `context` pada fungsi `show_main` ditambah dengan `'last_login': request.COOKIES['last_login']` untuk menambahkan informasi `last_login`. Fungsi `logout_user` dimodifikasi agar cookies dihapus ketika user logout. Pada file `main.html` ditambahkan kode untuk menampilkan waktu user login.
+    <br>
+    <br>
+    Selanjutnya, saya memodifikasi file `models.py` dengan mengimport modul `User` dan menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` untuk menghubungkan product dengan user. Kemudian saya memodifikasi function `create_product` pada file `views.py` agar objek yang dibuat tidak langsung disimpan ke database. Fungsi `show_main` juga dimodifikasi supaya bagian "Name" menampilkan username user yang sedang login. Terakhir, karena saya telah melakukan modifikasi pada `models.py`, maka saya melakukan migration models dari command prompt.
+    <br>
+    <br>
+    * Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal. <br>
+    Saya melakukan registrasi untuk membuat dua akun baru sesuai dengan ketentuan pada `UserCreationForm` dan men-submit 3 data pada masing-masing akun. Fungsi yang sudah dibuat sebelumnya bekerja dan tabel hanya menampilkan data yang di-submit oleh user yang sedang login.<br>
 
 <h3>Tugas 3</h3>
 
