@@ -5,7 +5,7 @@
     Kelebihan:
     - UserCreationForm merupakan fitur bawaan Django yang siap digunakan sehingga dapat menghemat waktu dalam pembuatan aplikasi
     - UserCreationForm dapat diimplementasikan pada app yang berbeda dari project sehingga memungkinkan untuk membuat sebuah app yang bertugas sepenuhnya untuk membuat user baru.
-    - UserCreationForm mendukung validasi input, seperti kesesuaian ketentuan username dan kesesuaian antara field "Password" dan "Password confirmation".
+    - UserCreationForm mendukung validasi input, seperti kesesuaian ketentuan username dan kesesuaian antara field "Password" dan "Password confirmation".<br>
 
     Kekurangan:
     - Hanya terdapat field username dan password. Jika ingin menambahkan field baru (seperti e-mail), maka harus memodifikasi UserCreationForm dengan menambahkan field serta validasi inputnya, atau dengan membuat form registrasi dari awal tanpa menggunakan UserCreationForm.
@@ -13,9 +13,16 @@
  2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting? <br>
     Autentikasi merupakan proses untuk memverifikasi identitas user dengan mengecek username dan passwordnya dengan data yang tersimpan di dalam database. Jika verifikasi sukses, maka sistem akan mengonfirmasi keabsahan user. Otorisasi adalah proses menentukan apa saja yang bisa dan tidak bisa dilakukan oleh user dengan mengecek apakah suatu user punya izin untuk mengakses atau melakukan sesuatu. <br>
     Keduanya penting untuk menjaga data sensitif agar tidak dapat dilihat dan disalahgunakan oleh sembarang user. Autentikasi dan otorisasi juga dapat memudahkan kita untuk memantau aktivitas user dengan mengetahui siapa user yang melakukan suatu hal di dalam sistem.
- 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+ 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna? <br>
+    Cookies adalah sebuah text file berukuran kecil yang menyimpan data seperti username dan password yang digunakan untuk mengidentifikasi komputer yang kita gunakan untuk mengakses sebuah website. Django menggunakan cookies sebagai bagian dari session management system. Ketika seorang user melakukan login, Django akan meletakkan session ID cookie pada client dan meletakkan session data pada server. Dengan itu, maka hanya session ID yang dapat dilihat oleh user, sedangkan session data aman tersembunyi di dalam server.
+
+ 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? <br>
+    Ada beberapa risiko potensial yang harus diwaspadai dalam menggunakan cookies: <br>
+    - Jika terjadi penyerangan pada situs web, cookies bisa terekspos oleh penyerang
+    - Potensi terjadinya Cross-Site Scripting, yang dapat terjadi ketika script berbahaya dimasukkan ke dalam situs web yang dapat digunakan untuk mencuri informasi sensitif seperti session token
+    - Potensi terjadinya session fixation, yaitu serangan yang memungkinkan penyerang membajak sesi user.<br>
     
- 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
  5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 <h3>Tugas 3</h3>
