@@ -1,3 +1,37 @@
+<h3>Tugas 5</h3>
+
+ 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya. <br>
+    Django `UserCreationForm` adalah form yang bertugas untuk mendaftarkan user baru ke dalam aplikasi kita.<br>
+    
+ 2. Jelaskan HTML5 Tag yang kamu ketahui. <br>
+    - &lt;nav&gt; : tag yang mendefinisikan sekumpulan link navigasi, contohnya pada navbar. Tag ini tidak harus berada pada setiap link navigasi, hanya gunakan tag ini pada bagian website yang memiliki sekumpulan link navigasi.
+      ```html
+      <nav>
+        <a href="/home/">Home</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact Us</a>
+      </nav>
+      ```
+    - &lt;video&gt; : tag yang digunakan untuk menambahkan konten video. Tag ini dapat berisi satu atau lebih atribut &lt;source&gt; yang akan dipilih sesuai format yang di-support oleh browser.
+      ```html
+      <video>
+        <source src="profile.mp4" type="video/mp4">
+      </video>
+      ```
+    - &lt;header&gt; : tag yang digunakan untuk menampilkan konten awal/paling atas dalam halaman web. Tag ini biasanya berisi elemen heading, logo website, paragraf, dan lainnya.
+      ```html
+      <header>
+        <h1>Supercar Dealership</h1>
+        <p>dibuat oleh Kimi</p>
+      </header>
+      ```
+
+ 3. Jelaskan perbedaan antara margin dan padding. <br>
+    Margin adalah ruang di sekitar suatu elemen yang berada di luar border elemen tersebut. Margin digunakan untuk mengatur jarak antar elemen, contohnya untuk mengatur jarak antar dua elemen image. Padding adalah ruang di antara border elemen dengan konten-konten di dalam elemen tersebut. Padding digunakan untuk mengatur jarak konten di dalam elemen dengan bordernya. <br>
+ 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+ 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 <h3>Tugas 4</h3>
  
  1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya? <br>
