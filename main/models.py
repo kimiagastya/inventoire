@@ -7,3 +7,4 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     amount = models.IntegerField()
     description = models.TextField()
+    # car_image = models.ImageField(upload_to='product_images/')

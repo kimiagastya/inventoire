@@ -1,7 +1,9 @@
 <h3>Tugas 5</h3>
 
  1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya. <br>
-    Django `UserCreationForm` adalah form yang bertugas untuk mendaftarkan user baru ke dalam aplikasi kita.<br>
+    1. Element selector digunakan untuk memilih dan mendesain semua elemen yang sama, misalnya semua elemen &lt;h1&gt; di dalam halaman web. Cocok digunakan jika suatu elemen sudah ditentukan peruntukannya sehingga desainnya konsisten.
+    2. ID selector digunakan untuk memilih dan mendesain elemen yang berada di dalam tag yang memiliki ID tertentu. Cocok digunakan saat ingin menetapkan aturan desain tertentu pada elemen HTML yang memiliki ID unik.
+    3. Class selector digunakan untuk memilih dan mendesain elemen-elemen yang berada di dalam tag yang memiliki class tertentu, biasanya pada tag div. Class tidak bersifat unik seperti ID, sehingga cocok digunakan saat ingin menggunakan selector yang sama pada beberapa elemen di suatu halaman web.
     
  2. Jelaskan HTML5 Tag yang kamu ketahui. <br>
     - &lt;nav&gt; : tag yang mendefinisikan sekumpulan link navigasi, contohnya pada navbar. Tag ini tidak harus berada pada setiap link navigasi, hanya gunakan tag ini pada bagian website yang memiliki sekumpulan link navigasi.
@@ -29,8 +31,30 @@
 
  3. Jelaskan perbedaan antara margin dan padding. <br>
     Margin adalah ruang di sekitar suatu elemen yang berada di luar border elemen tersebut. Margin digunakan untuk mengatur jarak antar elemen, contohnya untuk mengatur jarak antar dua elemen image. Padding adalah ruang di antara border elemen dengan konten-konten di dalam elemen tersebut. Padding digunakan untuk mengatur jarak konten di dalam elemen dengan bordernya. <br>
- 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+ 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya? <br>
+    Bootstrap: <br>
+    - Bootstrap menyediakan template CSS yang mengutamakan desain yang responsif dan mobile-first.
+    - Template Bootstrap sudah pre-designed sehingga desainnya konsisten.
+    - Bootstrap memiliki file yang berukuran besar.
+    <br>
+    Kapan menggunakan Bootstrap? <br>
+    - Developer membutuhkan framework desain web lengkap dengan style yang default.
+    - Developer ingin menggunakan framework desain yang mudah dipelajari.
+    - Website perlu di-develop dengan cepat.
+    <br>
+    <br>
+    Tailwind: <br>
+    - Tailwind tidak menyediakan komponen yang pre-designed.
+    - Tailwind menyediakan kelas-kelas utilitas desain yang digunakan untuk membangun tampilan website.
+    - Tailwind memiliki file yang berukuran kecil karena hanya berisi kelas-kelas utilitas yang ada.
+    <br>
+    Kapan menggunakan Tailwind?<br>
+    - Developer membutuhkan desain yang ringan untuk diimplementasikan.
+    - Developer membutuhkan framework desain yang fleksibel dan mudah untuk dikustomisasi.
+    - Developer membutuhkan framework desain yang memiliki kontrol penuh terhadap desain setiap elemennya.
+
  5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    Saya memilih framework CSS Bootstrap pada tugas 5 ini. Pertama-tama saya menambahkan Bootstrap ke aplikasi Django saya dengan menambahkan tag link serta atribut href dan tag script serta atribut src sesuai dengan dokumentasi Bootstrap pada file base.html di folder templates. Halaman login saya kustomisasi dengan memodifikasi file `login.html` dengan menambahkan header yang memberikan penjelasan tambahan mengenai website saya. Kemudian, saya membuat layout dua kolom dengan kolom sebelah kiri berisi form login dan kolom sebelah kanan berisi foto yang seakan-akan menggambarkan interior dealership. Saya juga melakukan hal yang mirip pada halaman register dan tambah inventori dengan header dan foto yang disesuaikan dengan halamannya. Pada halaman daftar inventori, saya melakukan beberapa hal. Pertama, saya menambahkan navbar yang diambil dari Bootstrap. Pada navbar tersebut saya isi dengan logo, kalimat welcome yang disesuaikan dengan username yang login, tombol "Add New Car" dan tombol logout. Setelah navbar, saya menambahkan jumbotron yang berisi kalimat pembuka mengenai promosi dealership. Perubahan selanjutnya adalah data yang disubmit tidak lagi ditampilkan dalam bentuk tabel, tetapi dengan menggunakan cards dari Bootstrap. Saya mengubah for loop pada file `main.html` dengan menghapus baris kode yang berkaitan dengan tabel dengan cards, kemudian, masih di dalalm loop, masing-masing card diisi dengan nama, stok, serta deskripsinya. Di dalam setiap card juga diisi dengan tombol edit dan delete.
 
 <h3>Tugas 4</h3>
  
