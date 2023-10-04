@@ -58,7 +58,11 @@
             <div class="card" style="width: 18rem;">
                 {% comment %} <img class="card-img-top" src="{{ p.car_image.url }}.jpg" alt="{{p.name}}"> {% endcomment %}
                     <div class="card-body">
+                    {% if forloop.last %}
+                        <h4 class="card-title" style="color:blueviolet;">{{p.name}}</h4>
+                    {% else %}
                     <h4 class="card-title">{{p.name}}</h4>
+                    {% endif %}
                     <h5 class="card-amount">Stock = {{p.amount}}</h5>
                     <p class="card-text">{{p.description}}</p>
                     <a href="{% url 'main:edit_product' p.pk %}">
