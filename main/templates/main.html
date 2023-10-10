@@ -61,7 +61,7 @@
                     {% if forloop.last %}
                         <h4 class="card-title" style="color:blueviolet;">{{p.name}}</h4>
                     {% else %}
-                    <h4 class="card-title">{{p.name}}</h4>
+                        <h4 class="card-title">{{p.name}}</h4>
                     {% endif %}
                     <h5 class="card-amount">Stock = {{p.amount}}</h5>
                     <p class="card-text">{{p.description}}</p>
@@ -83,5 +83,9 @@
 
     <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-
+    <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+    </script>
 {% endblock content %}

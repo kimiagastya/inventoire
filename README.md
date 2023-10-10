@@ -1,3 +1,26 @@
+<h3>Tugas 6</h3>
+
+ 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming. <br>
+    Asynchronous programming adalah paradigma pemrograman yang memungkinkan beberapa operasi dilakukan secara paralel, yaitu ketika suatu perintah sedang dieksekusi, perintah lain tetap dapat berjalan.
+    Sychronous programming adalah paradigma pemrograman yang mengeksekusi perintah satu persatu secara sekuensial sesuai dengan urutannya. Ketika suatu perintah dieksekusi, perintah lainnya tidak berjalan. <br>
+
+ 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+    
+ 3. Jelaskan penerapan asynchronous programming pada AJAX. <br>
+    Asynchronous programming pada AJAX memungkinkan konten halaman web untuk diperbarui tanpa harus me-refresh halamannya terlebih dahulu. Asynchronous programming diterapkan dengan menggunakan fungsi `async` untuk menandai suatu fungsi dapat mengembalikan nilai secara asynchronous.
+ 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan. <br>
+    Fetch API: <br>
+    - API yang bekerja berdasarkan atas promise.
+    - Dijalankan secara native oleh mayoritas browser modern.
+    - Secara otomatis mendukung data JSON.
+    jQuery: <br>
+    - Lebih berat daripada Fetch API dan memiliki data yang lebih besar untuk di-download client ketika mengakses website.
+    - Dijalankan berdasarkan callback.
+    - Library memiliki fitur tambahan dan lebih lengkap.
+    - Lebih banyak browser yang mendukung, termasuk browser non modern.<br>
+    Pemilihan teknologi tersebut disesuaikan dengan kebutuhan project website masing-masing, karena setiap metode penerapan AJAX memiliki kelebihan dan kekurangannya masing-masing. Jika ingin membangun website yang ringan dengan pengambilan data yang sederhana, maka sebaiknya gunakan Fetch API. Jika project sudah menggunakan jQuery dalam project yang dibuat serta ingin membuat website yang dapat disupport oleh browser yang lebih banyak, maka gunakan jQuery. <br>
+ 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 <h3>Tugas 5</h3>
 
  1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya. <br>
