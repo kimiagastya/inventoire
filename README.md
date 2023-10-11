@@ -4,22 +4,28 @@
     Asynchronous programming adalah paradigma pemrograman yang memungkinkan beberapa operasi dilakukan secara paralel, yaitu ketika suatu perintah sedang dieksekusi, perintah lain tetap dapat berjalan.
     Sychronous programming adalah paradigma pemrograman yang mengeksekusi perintah satu persatu secara sekuensial sesuai dengan urutannya. Ketika suatu perintah dieksekusi, perintah lainnya tidak berjalan. <br>
 
- 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
-    
+ 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini. <br>
+    Event driven programming adalah paradigma pemrograman yang menjalankan instruksi sesuai dengan event yang terjadi. Dalam tugas ini, diterapkan ketika menambahkan produk dengan "Add Product by AJAX" yang ketika sudah diisi dengan data yang sesuai dan ditekan button "Add Product", maka data tersebut diproses untuk membuat dan menambahkan product baru di database. <br>
+
  3. Jelaskan penerapan asynchronous programming pada AJAX. <br>
     Asynchronous programming pada AJAX memungkinkan konten halaman web untuk diperbarui tanpa harus me-refresh halamannya terlebih dahulu. Asynchronous programming diterapkan dengan menggunakan fungsi `async` untuk menandai suatu fungsi dapat mengembalikan nilai secara asynchronous.
  4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan. <br>
     Fetch API: <br>
     - API yang bekerja berdasarkan atas promise.
     - Dijalankan secara native oleh mayoritas browser modern.
-    - Secara otomatis mendukung data JSON.
+    - Secara otomatis mendukung data JSON. <br>
+    
     jQuery: <br>
     - Lebih berat daripada Fetch API dan memiliki data yang lebih besar untuk di-download client ketika mengakses website.
     - Dijalankan berdasarkan callback.
     - Library memiliki fitur tambahan dan lebih lengkap.
     - Lebih banyak browser yang mendukung, termasuk browser non modern.<br>
+    
     Pemilihan teknologi tersebut disesuaikan dengan kebutuhan project website masing-masing, karena setiap metode penerapan AJAX memiliki kelebihan dan kekurangannya masing-masing. Jika ingin membangun website yang ringan dengan pengambilan data yang sederhana, maka sebaiknya gunakan Fetch API. Jika project sudah menggunakan jQuery dalam project yang dibuat serta ingin membuat website yang dapat disupport oleh browser yang lebih banyak, maka gunakan jQuery. <br>
- 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+ 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). <br>
+    1. AJAX GET: Pertama saya membuat function `get_product_json` pada file `views.py` untuk mengembalikan data JSON. Selanjutnya pada `main.html` saya menambahkan fungsi `getProduct` pada tag script untuk menampilkan data produk menggunakan fetch secara asinkronus. Kemudian saya membuat function `refreshProducts` untuk me-refresh data secara asinkronus. Pada function `refreshProducts`, saya mengambil elemen dengan ID `cards_list` yang kemudian dilakukan for each loop yang berisi data setiap product yang pada akhirnya akan menampilkan setiap product yang di-add oleh user yang sedang login.
+    2. AJAX POST: Saya mengambil dan memodifikasi template Modal dari Bootstrap yang akan digunakan untuk menambahkan Product baru yang saya tambahkan di file `main.html`. Selanjutnya, saya menambahkan function `add_product_ajax` pada file `views.py` yang berfungsi untuk menambahkan data baru ke database dengan AJAX. Kemudian pada file `main.html` di bagian script saya tambahkan function `addProduct` yang akan menambahkan product baru secara asinkronus.
+    3. Melakukan perintah `collectstatic`: File `settings.py` yang berada pada direktori inventoire saya tambah dengan variabel `STATIC_ROOT` untuk menunjukkan direktori yang berisi file static untuk semua aplikasi, variabel `STATIC_URL` untuk menunjukkan URL yang menyediakan file static, dan variabel `STATICFILE_DIRS` untuk menunjukkan letak file static di folder lainnya.
 
 <h3>Tugas 5</h3>
 
