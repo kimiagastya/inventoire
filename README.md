@@ -1,5 +1,5 @@
 <h3>Tugas 6</h3>
-Link Aplikasi: 
+Link Aplikasi: http://i-putu27-tugas.pbp.cs.ui.ac.id/
 
  1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming. <br>
     Asynchronous programming adalah paradigma pemrograman yang memungkinkan beberapa operasi dilakukan secara paralel, yaitu ketika suatu perintah sedang dieksekusi, perintah lain tetap dapat berjalan.
